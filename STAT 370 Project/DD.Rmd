@@ -1,0 +1,36 @@
+---
+title: "Dynamic D"
+output: html_document
+---
+
+
+```{r}
+quad <- function(x,a=0,b=0,c=0){
+  return(a*x^2+b*x+c)
+}
+x <- (-3:3)
+y <- quad(x,a=2)
+plot(x,y,'l')
+y2 <- quad(x,a=1,b=5)
+y3 <- quad(x,a=2,b=4)
+lines(x,y2,'l')
+lines(x,y3,'l')
+y4 <- quad(x,a=4,b=2)
+y5 <- quad(x,a=6)
+y6 <- quad(x,a=1,c=2)
+lines(x,y4,'l')
+lines(x,y5,'l')
+lines(x,y6,'l')
+
+```
+```{r}
+
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
