@@ -21,6 +21,7 @@ y6 <- quad(x,a=1,c=2)
 lines(x,y4,'l')
 lines(x,y5,'l')
 lines(x,y6,'l')
+
 ```
 ```{r}
 
