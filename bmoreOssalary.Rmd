@@ -1,0 +1,23 @@
+---
+title: "The O's"
+author: "Dan"
+date: "May 3, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+baltimoreoriolesplayersalary <- c(6400000,325000,300000,130000000,4250000,3100000,1000000,3000000,7030000,3500000,375000,330000,3000000,1550000,1000000,1200000,325000,900000,1725000,300000,4250000,3500000,762500,7000000,1000000)
+```
+## R Markdown
+
+This is an R Markdown doc shows the salaries of all Orioles players from 2003. One player made a massive amount of money.
+
+```{r barplotofallbaltimoreorioleplayeysalaries2003}
+barplot(baltimoreoriolesplayersalary)
+```
+
+
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
