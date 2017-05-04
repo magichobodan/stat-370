@@ -1,0 +1,63 @@
+---
+title: "My Awesome Project"
+author: "Dan"
+date: "April 7, 2017"
+output: html_document
+---
+
+This project used continuation tapping to measure how the brain maintains time. It requires a subject to tap with a beat for an amount of time, then the beat is stopped. After the beat's cessation, the subject is again asked to continue tapping for a certain amount of time. The subject's ability to keep time on their own is then measured with audio tools. The model that Wing and Kristofferson purposed is supported by this experiment. In their model, it was hypothesised that there is an internal timing mechanism and a motor aspect of timing in the central nervous system which are both independent of each other. Data from a pilot study suggests that simulating data would be the best option to display the phenomena. The link below shows the code which was used to simulate the data, likelihoods, and AIC for the experiment.  
+
+Simulate Taps Inverse Gaussian 
+```{r sim.taps.ig}
+function(n,mu=1,sig=.04)function(n,mu=1,sig=.04){
+  s <- sig^2/mu^3
+  return(statmod::rinvgauss(n, mu, dispersion =  s))} 
+```
+Simulate taps Laplacian
+```{r sim.taps.la}
+function(n,mu=1,sig=.04)function(n,mu=1,sig=.04){
+  return(rlaplace(n, mu, sig))
+}
+```
+Likelihood of Inverse Gaussian
+```{r Likes.Taps.Ig}
+function(x, mu=1, sig=.04){
+  s <- sig^2/mu^3
+  return(statmod::dinvgauss(x, mu, s))
+}
+```
+Likelihood of Laplacian
+```{r Likes.Taps.La}
+function(x, mu=1, sig=.04){
+return(rmutil::dlaplace(x, m=1, s=.04, log=TRUE))
+  }
+```
+everything
+```{r k}
+source("kli.R")
+sim.tap.ig <- function(n,mu=1,sig=.04){
+  s <- sig^2/mu^3
+  return(statmod::rinvgauss(n, mu, s))
+}
+sim.tap.la <- function(n,mu=1,sig=.04){
+  return(rmutil::rlaplace(n, mu, sig))
+}
+likes.tap.ig <- function(x, mu=1, sig=.04){
+  s <- sig^2/mu^3
+  return(statmod::dinvgauss(x, mu, s))
+}
+likes.tap.la <- function(x, mu=1, sig=.04){
+return(rmutil::dlaplace(x, m=1, s=.04, log=TRUE))
+  } 
+taps <- (sim.tap.ig(200,1,.04))
+lig <- likes.tap.ig(taps)
+lla <- likes.tap.la(taps)
+tapsla <- (sim.tap.la(200,1,.04))
+llaa <- (likes.tap.la(tapsla))
+llig <- (likes.tap.ig(tapsla))
+aig <- aic(lig,lla)
+aiw <- aic(llaa,llig)
+naig <- aic(lla,lig)
+aig2 <- aic(likes.tap.ig(taps),likes.tap.la(taps))
+# sig <- samples.needed(likes.tap.ig(taps),likes.tap.la(taps))
+```
