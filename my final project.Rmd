@@ -5,7 +5,7 @@ date: "April 7, 2017"
 output: html_document
 ---
 
-This project used continuation tapping to measure how the brain maintains time. It requires a subject to tap with a beat for an amount of time, then the beat is stopped. After the beat's cessation, the subject is again asked to continue tapping for a certain amount of time. The subject's ability to keep time on their own is then measured with audio tools. The model that Wing and Kristofferson purposed is supported by this experiment. In their model, it was hypothesised that there is an internal timing mechanism and a motor aspect of timing in the central nervous system which are both independent of each other. Data from a pilot study suggests that simulating data would be the best option to display the phenomena. The link below shows the code which was used to simulate the data, likelihoods, and AIC for the experiment.  
+This project used continuation tapping to measure how the brain maintains time. It requires a subject to tap with a beat for an amount of time, then the beat is stopped. After the beat's cessation, the subject is asked to continue tapping for a certain amount of time. The subject's ability to keep time on their own is then measured with audio tools and analyzed. The model that Wing and Kristofferson purposed is supported by this experiment. In their model, it was hypothesised that there is an internal timing mechanism and a motor aspect of timing in the central nervous system which are both independent of each other. Data from a pilot study conducted by Colllier suggests that simulating data would be the best option to display the phenomena, howvever this study's results contridicts the results of the Collier study.  
 
 Simulate Taps Inverse Gaussian 
 ```{r sim.taps.ig}
