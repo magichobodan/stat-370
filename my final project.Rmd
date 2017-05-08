@@ -1,7 +1,7 @@
 ---
 title: "Dan's Super Awesome Project"
 author: "This project used continuation tapping to measure how the brain maintains time. It requires a subject to tap with a beat for an amount of time, then the beat is stopped. After the beat's cessation, the subject is again asked to continue tapping for a certain amount of time. The subject's ability to keep time on their own is then measured with audio tools. The model that Wing and Kristofferson purposed is supported by this experiment. The Wing-Kristofferson study hypothesizes that the Central Nervous system contains a noisy timing mechanism in synch with motor movement. There is noise in the central timing and in the motor command which are different. 
-Data from a Collier's study suggests that simulating data would be the best option to display the phenomena. "
+Data from Collier's study suggests that simulating data would be the best option to display the phenomena. "
 date: "April 7, 2017"
 output: html_document
 ---
